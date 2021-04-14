@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>在线 PPT 制作平台</title>
+    <link
+      rel="stylesheet"
+      href="//at.alicdn.com/t/font_2289141_j76qqm1yok.css"
+    />
+    <link rel="stylesheet" href="./main.css" />
+
+    <meta
+      name="description"
+      content="A framework for easily creating beautiful presentations using HTML"
+    />
+    <meta name="author" content="Hakim El Hattab" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/reveal.css" />
+    <!-- <link rel="stylesheet" href="css/theme/blood.css" id="theme"> -->
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css" />
+  </head>
+
+  <body>
+    <div class="control">
+      <span class="iconfont icon-setting"></span>
+    </div>
+    <!-- 菜单栏 -->
+    <div class="menu">
+      <span class="close iconfont icon-close"></span>
+      <div class="detail">
+        <!-- 左边 -->
+        <div class="tab active">
+          <span class="iconfont icon-edit"></span>内容编辑
+        </div>
+        <div class="tab">
+          <span class="iconfont icon-theme"></span>主题与特效
+        </div>
+        <div class="tab">
+          <span class="iconfont icon-download"></span>下载PDF
+        </div>
+        <div class="tab">
+          <span class="iconfont icon-Speaker"></span>演讲者模式
+        </div>
+        <div class="tab">
+          <span class="iconfont icon-help"></span>帮助
+        </div>
+ 
+        <!--右边内容  -->
+        <div class="content active">
+          <div class="header">内容与编辑</div>
+          <div class="body editor">
+            <textarea></textarea>
+            <div class="uploader">
+              <input type="file" id="img-uploader" accept="image/*" />
+              <label for="img-uploader">点击上传图片</label
+              ><span>(支持.png、.jpg、.gif 格式，最大2M)</span>
+            </div>
+            <div>
+              <button class="btn-save">保存</button>
+            </div>
+          </div>
+        </div>
+        <!-- 主题 -->
+        <div class="content">
+          <div class="header">主题</div>
+          <div class="body theme">
+            <div class="modular">
+              <div>
+                <h5>模式</h5>
+                <select class="transition">
+                  /none/fade/slide/convex/concave/zoom
+                  <option value="slide">滑动</option>
+                  <option value="fade">淡化</option>
+                  <option value="convex">凸出</option>
+                  <option value="concave">凹陷</option>
+                  <option value="zoom">缩放</option>
+                  <option value="none">无</option>
+                </select>
+              </div>
+              <div>
+                <h5>对齐</h5>
+                <select class="align">
+                  <option value="center">居中</option>
+                  <option value="left-top">左上</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <h5>主题特效</h5>
+              <div class="themes">
+                <figure data-theme="beige">
+                  <img src="./img/beige.png" alt="beige" />
+                  <figcaption class="bg">beige</figcaption>
+                </figure>
+                <figure data-theme="black">
+                  <img src="./img/black.png" alt="black" />
+                  <figcaption>black</figcaption>
+                </figure>
+                <figure data-theme="blood">
+                  <img src="./img/blood.png" alt="blood" />
+                  <figcaption>blood</figcaption>
+                </figure>
+                <!-- <figure>
+                                <img src="./img/custom.png" alt="custom">
+                                <figcaption>custom</figcaption>
+                            </figure> -->
+                <figure data-theme="league">
+                  <img src="./img/league.png" alt="league" />
+                  <figcaption>league</figcaption>
+                </figure>
+                <figure data-theme="moon">
+                  <img src="./img/moon.png" alt="moon" />
+                  <figcaption>moon</figcaption>
+                </figure>
+                <figure data-theme="night">
+                  <img src="./img/night.png" alt="night" />
+                  <figcaption>night</figcaption>
+                </figure>
+                <figure data-theme="serif">
+                  <img src="./img/serif.png" alt="serif" />
+                  <figcaption>serif</figcaption>
+                </figure>
+                <figure data-theme="simple">
+                  <img src="./img/simple.png" alt="simple" />
+                  <figcaption>simple</figcaption>
+                </figure>
+                <figure data-theme="sky">
+                  <img src="./img/sky.png" alt="sky" />
+                  <figcaption>sky</figcaption>
+                </figure>
+                <figure data-theme="solarized">
+                  <img src="./img/solarized.png" alt="solarized" />
+                  <figcaption>solarized</figcaption>
+                </figure>
+                <figure data-theme="white">
+                  <img src="./img/white.png" alt="white" />
+                  <figcaption>white</figcaption>
+                </figure>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 下载 PDF -->
+        <div class="content">
+          <div class="header">下载</div>
+          <div class="body">
+            <p class="download">点击</p><span class="">下载PDF</span>
+          </div>
+        </div>
+        <!-- 演讲者模式 -->
+        <div class="content">
+          <div class="header">演讲者模式</div>
+          <div class="body speaker">
+            <p>按 <strong> S </strong> 键,开启演讲者模式</p>
+          </div>
+        </div>
+        <!-- 帮助 -->
+        <div class="content">
+          <div class="header">帮助</div>
+          <div class="body helper">
+            <div>
+                <h5>markdown 语法</h5>
+                <div class="markdown">点击查看</div>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+
+    <div class="reveal">
+      <!-- slides 最好不要改，设置不要去掉s ，因为全局都有slides这个类，要改有需要改 -->
+      <div class="slides"></div>
+    </div>
+
+    <script src="//cdn.jsdelivr.net/npm/leancloud-storage@4.2.0/dist/av-min.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="./js/reveal.js"></script>
+    <script src="./js/index3.js"></script>
+  </body>
+</html>

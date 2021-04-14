@@ -1,0 +1,241 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .reveal.left-top section {
+    text-align: left;
+  }
+  .reveal.left-top .slides > section:first-child {
+    text-align: center;
+    top: 35%;
+  }
+  
+  .control {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 100px;
+    /* background-color: #f001; */
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+  .control:hover {
+    opacity: 1;
+    transition: all 0.3s;
+  }
+  .control .iconfont {
+    display: inline-block;
+    font-size: 40px;
+    color: #fff;
+    margin-left: 16px;
+    margin-top: 16px;
+    padding: 4px;
+    cursor: pointer;
+  }
+  
+  .menu {
+    position: fixed;
+    width: 220px;
+    left: 0;
+    height: 100vh;
+    background-color: #252f2d;
+    color: #747c7c;
+    font-size: 13px;
+    z-index: 100;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+  }
+  .menu.open {
+    transform: translateX(0);
+  }
+  .menu .close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  .menu .close:hover {
+    color: #fff;
+    transition: color 0.3s;
+    cursor: pointer;
+  }
+  .detail {
+    margin-top: 50px;
+  }
+  .detail .tab {
+    display: flex;
+    align-items: center;
+    padding: 8px 20px;
+    cursor: pointer;
+  }
+  .detail .tab.active {
+    color: #fff;
+  }
+  .tab .iconfont {
+    margin-right: 8px;
+  }
+  
+  .detail .content {
+    position: absolute;
+    padding-bottom: 80px;
+    top: 0;
+    left: 220px;
+    width: calc(100vw - 220px);
+    height: 100vh;
+    background: #cedad8;
+    font-size: 19px;
+    color: #041b5f;
+    /* 页面滚动 */
+    overflow: scroll;
+    /* 当在这设置 z-index：100 右下方还有箭头时，那就是层叠上下文的问题 ，说明这个父元素的层级太低，直接去设置父元素的层级就好*/
+    transform: translateX(calc(100% + 220px));
+    transition: transform 0.3s;
+  }
+  .detail .content .btn-save {
+    margin-top: 30px;
+    background-color: #1f87e9;
+    margin-right: 60px;
+    padding: 10px;
+    color: #d9dfdf;
+    border: none;
+    /* outline不占据空间，绘制于元素内容周围。
+      根据规范，outline通常是矩形，但也可以是非矩形的。 */
+    outline: none;
+    opacity: 0.7;
+    cursor: pointer;
+    float: right;
+  }
+  .detail .content .btn-save::after {
+    position: absolute;
+    display: none;
+    content: "点击保存刷新页面";
+    background: #fff;
+    color: #000;
+    width: 120px;
+    left: -50px;
+    bottom: -100%;
+    padding: 5px;
+    border-radius: 6px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.3);
+    cursor: default;
+  }
+  /* .btn-save.show {
+      display: block;
+  } */
+  
+  .detail .content .btn-save:hover {
+    opacity: 1;
+    display: block;
+    transform: scale(1);
+  }
+  .menu.open .content.active {
+    transform: translateX(0);
+  }
+  .detail .content .header {
+    font-size: 40px;
+    padding: 20px;
+    border-bottom: 1px solid #425351;
+  }
+  .detail .content .body {
+    padding: 20px;
+  }
+  
+  .detail .content textarea {
+    /* 100% 是根据父元素的100%  100vw 是视窗的100% */
+    width: 100%;
+    height: 500px;
+    padding: 10px;
+    background: #57824a;
+    color: #fff;
+    border: none;
+    outline: none;
+  }
+  
+  .editor [type="file"] {
+    display: none;
+  }
+  .editor .uploader label {
+    display: inline-block;
+    margin-top: 10px;
+    padding-bottom: 4px;
+    color: #0a3fee;
+    cursor: pointer;
+  }
+  .editor .uploader span {
+      cursor: default;
+  }
+  
+  .themes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: space-around;
+    justify-content: flex-start;
+    margin-left: 20px;
+  }
+  .modular {
+    display: flex;
+    justify-content: flex-start;
+    width: 100px;
+  }
+  .themes figure {
+    margin-top: 30px;
+    text-align: center;
+    border: 4px solid transparent;
+    opacity: 0.7;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .themes figure.select {
+    opacity: 1;
+    border: 4px solid #bf8d8e;
+  }
+  .themes figure figcaption {
+    padding: 10px;
+  }
+  .themes figure.select figcaption {
+    background: #bf8d8e;
+    color: white;
+  }
+  .themes img {
+    width: 300px;
+    height: 200px;
+  }
+  
+  .theme .modular h5 {
+    text-align: center;
+  }
+  
+  .theme .transition {
+    margin: 20px 60px;
+    font-size: 20px;
+    border-radius: 6px;
+    padding: 6px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .theme .align {
+    margin: 20px 60px;
+    font-size: 20px;
+    border-radius: 6px;
+    padding: 6px;
+    cursor: pointer;
+    border: none;
+  }
+   .download {
+      display: inline-block;
+      color: #1f87e9;
+      cursor: pointer;
+  }
+  .content span {
+      cursor: default;
+  }
+  .speaker p {
+      cursor: default;
+  }
+  .speaker p strong{
+      font-weight: 800;
+      color: red;
+      cursor: pointer;
+  }
